@@ -1,7 +1,11 @@
 <?php
 session_start();
+if(isset($_POST['reset'])){
+    session_destroy();
+    $_session_destroy['nbvisites']=0;
+}
 
-if(!(isset($_SESSION['nbvisites']))){
+if((!isset($_SESSION['nbvisites']))){
     $_SESSION['nbvisites']= 0;
 
 
@@ -10,13 +14,8 @@ else{
     $_SESSION['nbvisites']++;
 }
 
-if(isset($_POST['reset'])){
-    session_destroy();
-    $_session_destroy['nbvisites']=0;
-}
-echo $_SESSION['nbvisites']  . "vous m'avait déja vue";
 
-
+echo "vous m'avez déja vu".  $_SESSION['nbvisites'];
 
 
 ?>
