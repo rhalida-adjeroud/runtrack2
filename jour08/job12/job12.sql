@@ -1,0 +1,1 @@
+select `capacite` FROM `salles` ORDER BY `capacite`
