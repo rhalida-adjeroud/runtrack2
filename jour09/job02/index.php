@@ -1,7 +1,7 @@
 <?php
     $bdd = mysqli_connect('localhost','root','','jour08');
     mysqli_set_charset($bdd , 'utf8');
-    $requete = mysqli_query($bdd,"select * FROM salles ");
+    $requete = mysqli_query($bdd,"select `nom`,`capacite` FROM salles ");
     $salles = mysqli_fetch_all($requete, MYSQLI_ASSOC);
 
 ?>
@@ -11,32 +11,27 @@
         <title>tableau sql php</title>
     </head>
     <body>
-        <table>
+        <table cellspacing="3", border=2>
             <thead>
-                <tr>
-                <td>nom</th>
-                <th>capacite</th>
-                
-
-
-                </tr>
+            
+       
+                <th>nom</th>
+                <th>capacité</th>
+        
             </thead>
-        </table>
         
     </body>
     <tbody>
-        <table cellspacing="10", border=5>
         <?php
         foreach($salles as $salle){
-            
-            echo '<tr><td>'.$salle['nom'].'<td><br/>';
-            echo '<tr><td>'.$salle['capacite'].'<td><br/>';
-            
-           
-           
+            echo'<tr>';
+            foreach($salle as $infos => $value){
+            echo '<th>' .$value. '</th>';
+            }
+          echo '</tr>'; 
         }
         ?>
-        </table>
+    </table>
     </tbody>
 
 
