@@ -11,33 +11,27 @@
         <title>tableau sql php</title>
     </head>
     <body>
-        <table>
+        <table cellspacing="3", border="2">
             <thead>
-                <tr>
+                <th>id</th>
                 <th>nom</th>
                 <th>prenom</th>
                 <th>naissance</th>
                 <th>sexe</th>
                 <th>email</th>
-
-
-                </tr>
             </thead>
-        </table>
-        
     </body>
     <tbody>
         <?php
-        foreach($etudiants as $etudiant){
-            echo '<tr><td>'.$etudiant['nom'].'<td><br/>';
-            echo '<tr><td>'.$etudiant['prenom'].'<td><br/>';
-            echo '<tr><td>'.$etudiant['naissance'].'<td><br/>';
-            echo '<tr><td>'.$etudiant['sexe'].'<td><br/>';
-            echo '<tr><td>'.$etudiant['email'].'<td><br/>';
-           
-           
+         foreach($etudiants as $etudiant){
+            echo'<tr>';
+            foreach($etudiant as $infos => $value){
+            echo '<th>' .$value. '</th>';
+            }
+          echo '</tr>'; 
         }
         ?>
+        <table>
     </tbody>
 
 
