@@ -26,7 +26,7 @@ var_dump($salles);
          foreach($salles as $salle){
             echo'<tr>';
                  foreach($salles as $salle => $value){
-                    echo '<td>' .$salle. '</td>';
+                    echo '<td>' .$salle . '</td>';
             }
             echo '</tr>'; 
         }
