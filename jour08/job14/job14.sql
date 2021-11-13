@@ -1,0 +1,1 @@
+select`prenom`, `nom`, `naissance` FROM `etudiants`
